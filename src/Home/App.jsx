@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 import { IonIcon } from '@ionic/react';
 import { menuOutline, closeOutline, timeOutline, star, starOutline } from 'ionicons/icons';
 import { compass, briefcase, umbrella } from 'ionicons/icons';
 import './App.css';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Home = () => {
+  const scrollRef = useRef(null);
   const [navActive, setNavActive] = useState(false);
   const [showProfile, setShowProfile] = useState(true);
 
@@ -33,7 +36,7 @@ const Home = () => {
     window.location.href = 'register.html';
   };
 
-  const destinations = [
+  const categories = [
     {
       img: '/images/frndsindex.jpg',
       alt: 'Malé, Maldives',
@@ -86,6 +89,14 @@ const Home = () => {
       rating: 4,
     },
   ];
+
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    if (container) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div>
@@ -169,21 +180,46 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <p className="text-center font-bold text-[50px] font-['Abril_Fatface'] text-gray-500 mb-2">Features that We Offer</p>
           <h2 className="text-6xl font-['Brush_Script_MT',cursive] text-center text-rose-500 mb-12">Explore!!!!</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {destinations.map((dest, index) => (
-              <li key={index} className="w-full">
-                <a href="#" className="block rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition duration-300">
-                  <figure className="aspect-[4/3] overflow-hidden">
-                    <img src={dest.img} alt={dest.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
-                  </figure>
-                  <div className="p-4 bg-white">
-                    <p className="text-sm text-gray-500">{dest.subtitle}</p>
-                    <h3 className="text-xl font-semibold text-gray-800">{dest.title}</h3>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
+
+          <div className="relative">
+            {/* Left arrow */}
+            <a
+              onClick={() => scroll('left')}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-1"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </a>
+
+            <div
+              ref={scrollRef}
+              className="flex overflow-x-auto space-x-4 py-2 px-8 scrollbar-hide"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {categories.map((category, index) => (
+                <div
+                  key={index}
+                  className="min-w-[340px] min-h-[340px] bg-white rounded-xl shadow-md text-center p-4 flex-shrink-0"
+                >
+                  <img
+                    src={category.img}
+                    alt={category.alt}
+                    className="w-full h-[300px] mx-auto mb-4 rounded object-cover transition-transform duration-300 hover:scale-105"
+                    loading="lazy"
+                  />
+                  <p className="text-sm text-gray-500">{category.subtitle}</p>
+                  <h3 className="text-2xl font-semibold text-gray-800">{category.title}</h3>
+                </div>
+              ))}
+            </div>
+
+            {/* Right arrow */}
+            <a
+              onClick={() => scroll('right')}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-1"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </section>
 
