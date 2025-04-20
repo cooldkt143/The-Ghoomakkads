@@ -1,7 +1,5 @@
 import React from "react";
-import teamImage from "/images/team.webp"; // Make sure this path is correct
-import logo from "/images/logo-ghoomakkads (2).png";
-import profilePic from "/images/host1.jpg";
+
 
 const Header = () => {
   const navigateTo = (path) => {

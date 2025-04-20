@@ -1,52 +1,53 @@
 import React from "react";
+import bgImg from "../assets/adventurebg.gif";
 
 const adventures = [
   {
     title: "Biking",
     description: "Feel the adrenaline as you cycle through rugged terrains and serene trails.",
-    image: "/images/biking.jpg",
+    image: "src/assets/biking.jpg",
     link: "https://www.bikersclub.in/",
   },
   {
     title: "Trekking",
     description: "Explore majestic mountains and verdant valleys on your trekking adventures.",
-    image: "/images/trekking.jpg",
+    image: "src/assets/trekking.jpg",
     link: "https://www.trekupindia.com/",
   },
   {
     title: "Stargazing",
     description: "Defy gravity and test your limits as you scale rocky heights.",
-    image: "/images/Star gazzing.jpg",
+    image: "src/assets/Star gazzing.jpg",
     link: "https://amateurastroclub.in/",
   },
   {
     title: "Camping",
     description: "Reconnect with nature under the open sky at picturesque camping sites.",
-    image: "/images/Camping.jpg",
+    image: "src/assets/Camping.jpg",
     link: "https://www.campsvilla.com/",
   },
   {
     title: "Biking",
     description: "Feel the adrenaline as you cycle through rugged terrains and serene trails.",
-    image: "/images/biking.jpg",
+    image: "src/assets/biking.jpg",
     link: "https://www.bikersclub.in/",
   },
   {
     title: "Trekking",
     description: "Explore majestic mountains and verdant valleys on your trekking adventures.",
-    image: "/images/trekking.jpg",
+    image: "src/assets/trekking.jpg",
     link: "https://www.trekupindia.com/",
   },
   {
     title: "Stargazing",
     description: "Defy gravity and test your limits as you scale rocky heights.",
-    image: "/images/Star gazzing.jpg",
+    image: "src/assets/Star gazzing.jpg",
     link: "https://amateurastroclub.in/",
   },
   {
     title: "Camping",
     description: "Reconnect with nature under the open sky at picturesque camping sites.",
-    image: "/images/Camping.jpg",
+    image: "src/assets/Camping.jpg",
     link: "https://www.campsvilla.com/",
   },
 ];
@@ -56,7 +57,7 @@ const AdventureHub = () => {
     <div className="bg-green-900 text-gray-800">
       <header
         className="fixed top-0 left-0 w-full text-center text-white py-20 px-4 bg-center bg-blend-overlay bg-black/50 z-50"
-        style={{ backgroundImage: "url('/images/adventurebg.gif')" }}
+        style={{ backgroundImage: `url(${bgImg})`, height: "290px" }}
       >
         <h1 className="text-5xl font-bold">Adventure Hub</h1>
         <p className="text-xl mb-10 mt-2">Unleash your adventurous spirit with thrilling outdoor activities.</p>
@@ -74,8 +75,8 @@ const AdventureHub = () => {
               className="block bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden text-center h-[400px] relative"
             >
               <img src={item.image} alt={item.title} className="w-full h-52 object-cover" />
-              <h2 className="text-4xl mb-5 text-blue-600 font-semibold mt-4">{item.title}</h2>
-              <p className="text-2xl text-gray-600 px-4 pb-6">{item.description}</p>
+              <h2 className="text-2xl lg:text-4xl mb-5 text-blue-600 font-semibold mt-4">{item.title}</h2>
+              <p className="text-xl lg:text-2xl text-gray-600 px-4 pb-6">{item.description}</p>
             </a>
           ))}
         </section>

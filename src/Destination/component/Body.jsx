@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const App = () => {
+const Body = () => {
   const scrollRef = useRef(null);
   const scrollRef1 = useRef(null);
 
@@ -24,49 +24,49 @@ const App = () => {
 
   const categories = [
       {
-        img: '/images/d3.jpg',
+        img: 'src/assets/d3.jpg',
         alt: 'coorg, Karnataka',
         subtitle: 'coorg',
         title: 'Karnataka',
       },
       {
-        img: '/images/d2.jpg',
+        img: 'src/assets/d2.jpg',
         alt: 'sela pass, tawang',
         subtitle: 'Tawang (Arunachal)',
         title: 'Sela Pass',
       },
       {
-        img: '/images/d1.webp',
+        img: 'src/assets/d1.webp',
         alt: 'kang suri, Meghalaya',
         subtitle: 'Meghalaya',
         title: 'Kang Suri Falls',
       },
       {
-        img: '/images/d4.avif',
+        img: 'src/assets/d4.avif',
         alt: 'Kathmandu, Nepal',
         subtitle: 'Odisha',
         title: 'Jirang',
       },
       {
-        img: '/images/d5.webp',
+        img: 'src/assets/d5.webp',
         alt: 'Jakarta, Indonesia',
         subtitle: 'Odisha',
         title: 'Koraput',
       },
       {
-        img: '/images/d6.png',
+        img: 'src/assets/d6.png',
         alt: 'Kodaikanal (Tamil Nadu)',
         subtitle: 'Kodaikanal',
         title: 'Tamil Nadu',
       },
       {
-        img: '/images/d7.png',
+        img: 'src/assets/d7.png',
         alt: ' Kankaria Lake (Gujrat)',
         subtitle: 'Kankaria Lake',
         title: 'Gujrat',
       },
       {
-        img: '/images/d8.png',
+        img: 'src/assets/d8.png',
         alt: 'Kullu Manali (Himachal Pradesh)',
         subtitle: 'Kullu Manali',
         title: 'Himachal Pradesh',
@@ -75,19 +75,19 @@ const App = () => {
 
     const categoryy = [
       {
-        img: '/images/Mountaining.jpeg',
+        img: 'src/assets/Mountaining.jpeg',
         alt: 'Malé, Maldives',
         subtitle: 'Travel With',
         title: 'Mountaineering',
       },
       {
-        img: '/images/Hands.gif',
+        img: 'src/assets/Hands.gif',
         alt: 'Bangkok, Thailand',
         subtitle: 'Pin Your',
         title: 'Travel',
       },
       {
-        img: '/images/moneygif.gif',
+        img: 'src/assets/moneygif.gif',
         alt: 'Kuala Lumpur, Malaysia',
         subtitle: 'Save For Your',
         title: 'Upcoming Trips',
@@ -112,40 +112,37 @@ const App = () => {
 
   return (
 
-    <>
-    
-    <div className="pt-24 px-4 sm:px-8 lg:px-20 xl:px-32 2xl:px-40 bg-gray-100 min-h-screen">
-
+    <>    
+    <div className="pt-24 px-4 sm:px-5 lg:px-20 xl:px-32 2xl:px-40 bg-gray-100 min-h-screen">
       <div className="relative mb-5">
-
         {/* Scrollable cards */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto space-x-4 py-2 px-12 whitespace-nowrap scroll-smooth px-4 py-6"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {categoryy.map((category, index) => (
             <div
-                ref={scrollRef}
-                className="flex overflow-x-auto space-x-4 py-2 px-12 whitespace-nowrap scroll-smooth px-4 py-6"
-                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+              key={index}
+              className="min-w-full lg:min-w-full min-h-[190px] lg:min-h-[390px] bg-white rounded-xl shadow-md text-center p-4 flex-shrink-0"
             >
-                {categoryy.map((category, index) => (
-                  <div
-                    key={index}
-                    className="min-w-full min-h-[390px] bg-white rounded-xl shadow-md text-center p-4 flex-shrink-0"
-                  >
-                    <img
-                      src={category.img}
-                      alt={category.alt}
-                      className="w-full h-[330px] mx-auto mb-4 rounded-[1%] object-cover "
-                      loading="lazy"
-                    />
-                    <h3 className="text-2xl font-semibold text-gray-800">{category.title}</h3>
-                  </div>
-                ))}
-              </div>
+              <img
+                src={category.img}
+                alt={category.alt}
+                className="w-full lg:w-full h-[130px] lg:h-[330px] mx-auto mb-4 rounded-[1%] object-cover "
+                loading="lazy"
+              />
+                <h3 className="text-2xl font-semibold text-gray-800">{category.title}</h3>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="relative mb-5">
+      <div className="relative">
         {/* Left arrow */}
         <a
           onClick={() => scroll1('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-1"
+          className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-1"
         >
           <ChevronLeft className="w-5 h-5" />
         </a>
@@ -153,18 +150,18 @@ const App = () => {
         {/* Scrollable cards */}
           <div
                 ref={scrollRef1}
-                className="flex overflow-x-auto space-x-4 py-2 px-8 scrollbar-hide"
+                className="flex overflow-x-auto space-x-4 py-2 px-2 scrollbar-hide"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
               >
                 {categories.map((category, index) => (
                   <div
                     key={index}
-                    className="min-w-[240px] min-h-[240px] bg-white rounded-xl shadow-md text-center p-4 flex-shrink-0"
+                    className="min-w-[140px] min-h-[140px] lg:min-w-[240px] lg:min-h-[240px] bg-white rounded-xl shadow-md text-center p-4 flex-shrink-0"
                   >
                     <img
                       src={category.img}
                       alt={category.alt}
-                      className="w-[350px] h-[200px] mx-auto mb-4 rounded object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-[190px] h-[150px] lg:w-[350px] lg:h-[200px] mx-auto mb-4 rounded object-cover transition-transform duration-300 hover:scale-105"
                       loading="lazy"
                     />
                     <p className="text-sm text-gray-500">{category.subtitle}</p>
@@ -176,7 +173,7 @@ const App = () => {
         {/* Right arrow */}
         <a
           onClick={() => scroll1('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-1"
+          className="hidden lg:block  absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow rounded-full p-1"
         >
           <ChevronRight className="w-5 h-5" />
         </a>
@@ -186,4 +183,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Body;
