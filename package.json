@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://cooldkt143.github.io/The-Ghoomakkads",   // <-- ADD THIS LINE
+  "homepage": "https://cooldkt143.github.io/The-Ghoomakkads",  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
