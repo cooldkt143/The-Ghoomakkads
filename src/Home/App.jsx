@@ -109,7 +109,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className='top-0 left-0 w-full min-h-screen'>
       {/* Header */}
       <header className={`fixed top-0 left-0 w-full lg:py-2 bg-rose-400 shadow-md z-50 ${navActive ? 'bg-rose-400' : ''}`}>
         <div className="container mx-auto px-0 flex items-center justify-between">
@@ -353,10 +353,10 @@ const Home = () => {
         </div>
       </section>
 
-            
-      {/* <footer className="fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 text-xl z-50">
+      {/* Footer */}
+      <footer className=" bottom-0 left-0 w-full bg-rose-400 text-white text-center py-4 text-sm z-50">
         <p>© The Ghoomakkads</p>
-      </footer> */}
+      </footer>
     </div>
   );
 };
