@@ -298,7 +298,7 @@ const Home = () => {
                   <IonIcon icon={compass} />
                 </div>
                 <div>
-                  <h3 className="text-2xl lg:text-4xl text-left font-semibold text-gray-700 mb-1">Money guide</h3>
+                  <h3 className="text-2xl lg:text-3xl text-left font-semibold text-gray-700 mb-1">Money guide</h3>
                   <p className="text-left text-base lg:text-[20px] text-gray-600">
                     We encourage our users to save minimal money at regular intervals
                     which can be retrieved later and used for their next trips.
@@ -311,7 +311,7 @@ const Home = () => {
                   <IonIcon icon={briefcase} />
                 </div>
                 <div>
-                  <h3 className="text-2xl lg:text-4xl text-left font-semibold text-gray-700 mb-1">Friendly price</h3>
+                  <h3 className="text-2xl lg:text-3xl text-left font-semibold text-gray-700 mb-1">Friendly price</h3>
                   <p className="text-left text-base lg:text-[20px] text-gray-600">
                     By purchasing 1 digital coin which will be equivalent to 1 INR.
                     You may access this anytime you want during your journey/ your future trips.
@@ -324,7 +324,7 @@ const Home = () => {
                   <IonIcon icon={umbrella} />
                 </div>
                 <div>
-                  <h3 className="text-2xl lg:text-4xl text-left font-semibold text-gray-700 mb-1">When to Save?</h3>
+                  <h3 className="text-2xl lg:text-3xl text-left font-semibold text-gray-700 mb-1">When to Save?</h3>
                   <p className="text-left text-base lg:text-[20px] text-gray-600">
                     The time when you're at your home (when not travelling), you may save a little amount.
                     This saving approach will prevent them from reconsidering their budget while planning their trips.
@@ -352,11 +352,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className=" bottom-0 left-0 w-full bg-rose-400 text-white text-center py-4 text-sm z-50">
-        <p>© The Ghoomakkads</p>
-      </footer>
     </div>
   );
 };
