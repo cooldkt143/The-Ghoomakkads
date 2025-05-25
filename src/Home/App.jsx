@@ -2,14 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import logoImg from '../assets/logo-ghoomakkads.png';
 import profileImg from '../assets/host1.jpg';
 import heroImg from '../assets/edit1.jpg';
-// import catImg1 from '../assets/frndsindex.jpg';
-// import catImg2 from '../assets/Hands.gif';
-// import catImg3 from '../assets/moneygif.gif';
-// import catImg4 from '../assets/religious attraction.jpg';
-// import catImg5 from '../assets/Charm of a Chat.gif';
 import piggyImg from '../assets/7 Things Frequent Travelers Do to Save Money for Vacations.jpg';
 import { IoMenuOutline } from 'react-icons/io5';
-
+import App from '../ChatBot/App';
 import { IonIcon } from '@ionic/react';
 import { menuOutline, closeOutline, timeOutline, star, starOutline } from 'ionicons/icons';
 import { compass, briefcase, umbrella } from 'ionicons/icons';
@@ -352,6 +347,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <App />
     </div>
   );
 };

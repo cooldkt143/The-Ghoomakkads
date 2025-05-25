@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import teamImage from "../assets/team.webp";
 import logo from "../assets/logo-ghoomakkads (2).png";
 import profilePic from "../assets/host1.jpg";
+import App from '../ChatBot/App';
 import { IoMenuOutline } from "react-icons/io5"; // Using react-icons for menu
 
 const AboutUs = () => {
@@ -102,6 +103,7 @@ const AboutUs = () => {
           />
         </div>
       </section>
+
 
       {/* Footer */}
       <footer className="fixed bottom-0 left-0 w-full bg-rose-400 text-white text-center py-4 text-sm z-50">
