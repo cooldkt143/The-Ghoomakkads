@@ -1,15 +1,17 @@
 import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import bgImg from "../assets/homebg.jpg"
 import aroplaneImg from "../assets/Airplane.png"
 import logoImg from "../assets/logo-ghoomakkads.png"
+import Home from "../Home/App.jsx";
 
-const App = () => {
+const Landing = () => {
   const openHome = () => {
     window.location.href = "Home.html";
   };
 
   return (
-    <div className="fixed w-full font-[Poppins] text-gray-700 bg-gray-100">
+    <div className="fixed top-0 left-0 w-full font-[Poppins] text-gray-700 bg-gray-100">
 
       {/* Hero Section */}
       <section className="h-screen bg-cover bg-center flex flex-col items-center justify-center text-center px-5" style={{ backgroundImage: `url(${bgImg})` }}>
@@ -37,5 +39,14 @@ const App = () => {
     </div>
   );
 };
+
+const App = () => (
+  <Router basename="/The-Ghoomakkads">
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
