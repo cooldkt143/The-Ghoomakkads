@@ -1,5 +1,6 @@
 {
   "name": "reactyt",
+  "homepage": "https://cooldkt143.github.io/The-Ghoomakkads/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,11 +8,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@ionic/react": "^8.5.3",
     "@tailwindcss/vite": "^4.0.17",
+    "gh-pages": "^6.3.0",
     "ionicons": "^7.4.0",
     "lucide-react": "^0.487.0",
     "react": "^19.0.0",
