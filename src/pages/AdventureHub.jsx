@@ -8,6 +8,7 @@ import photographyImg from "../assets/images/photography.jpg";
 import DigitalNomadsClubImg from "../assets/images/DigitalNomadsClub.jpg";
 import CulturalDiscoveryClubImg from "../assets/images/CulturalDiscoveryClub.jpg";
 import WaterSportsBeachClubImg from "../assets/images/WaterSports&BeachClub.jpg";
+import Header from "../components/Header";
 
 const adventures = [
   {
@@ -67,7 +68,8 @@ const AdventureHub = () => {
         className="fixed top-0 left-0 w-full text-center text-white py-20 px-4 bg-center bg-blend-overlay bg-black/50 z-50"
         style={{ backgroundImage: `url(${bgImg})`, height: "290px" }}
       >
-        <h1 className="text-5xl font-bold">Adventure Hub</h1>
+        <Header />
+        <h1 className="text-5xl font-bold pt-8 mt-5">Adventure Hub</h1>
         <p className="text-xl mb-10 mt-2">
           Unleash your adventurous spirit with thrilling outdoor activities.
         </p>
