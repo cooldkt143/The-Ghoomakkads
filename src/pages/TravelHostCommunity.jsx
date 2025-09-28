@@ -32,6 +32,90 @@ const TravelHostCommunity = () => {
       specialty: "Adventure Tours & Mountain Stargazing",
       image: host4,
     },
+        {
+      name: "Tejaswini Sabat",
+      location: "Madhya Pradesh, India",
+      specialty: "Group Tours & Solo Experiences",
+      image: host1,
+    },
+    {
+      name: "Ridesh Sharma",
+      location: "Gangtok, Shillong",
+      specialty: "Trekking & Food Tastings",
+      image: host2,
+    },
+    {
+      name: "Aisha Khan",
+      location: "Pathankot, Punjab",
+      specialty: "Desert Excursions & Adventure",
+      image: host3,
+    },
+    {
+      name: "Jimmy Shergill",
+      location: "Nanitaal, Uttrakhand",
+      specialty: "Adventure Tours & Mountain Stargazing",
+      image: host4,
+    },
+        {
+      name: "Tejaswini Sabat",
+      location: "Madhya Pradesh, India",
+      specialty: "Group Tours & Solo Experiences",
+      image: host1,
+    },
+    {
+      name: "Ridesh Sharma",
+      location: "Gangtok, Shillong",
+      specialty: "Trekking & Food Tastings",
+      image: host2,
+    },
+    {
+      name: "Aisha Khan",
+      location: "Pathankot, Punjab",
+      specialty: "Desert Excursions & Adventure",
+      image: host3,
+    },
+    {
+      name: "Jimmy Shergill",
+      location: "Nanitaal, Uttrakhand",
+      specialty: "Adventure Tours & Mountain Stargazing",
+      image: host4,
+    },
+        {
+      name: "Tejaswini Sabat",
+      location: "Madhya Pradesh, India",
+      specialty: "Group Tours & Solo Experiences",
+      image: host1,
+    },
+    {
+      name: "Ridesh Sharma",
+      location: "Gangtok, Shillong",
+      specialty: "Trekking & Food Tastings",
+      image: host2,
+    },
+    {
+      name: "Aisha Khan",
+      location: "Pathankot, Punjab",
+      specialty: "Desert Excursions & Adventure",
+      image: host3,
+    },
+    {
+      name: "Jimmy Shergill",
+      location: "Nanitaal, Uttrakhand",
+      specialty: "Adventure Tours & Mountain Stargazing",
+      image: host4,
+    },
+        {
+      name: "Tejaswini Sabat",
+      location: "Madhya Pradesh, India",
+      specialty: "Group Tours & Solo Experiences",
+      image: host1,
+    },
+    {
+      name: "Ridesh Sharma",
+      location: "Gangtok, Shillong",
+      specialty: "Trekking & Food Tastings",
+      image: host2,
+    },
   ];
 
   return (
@@ -41,19 +125,19 @@ const TravelHostCommunity = () => {
 
       {/* Hero Section */}
       <section
-        className="h-[60vh] bg-cover bg-center flex flex-col justify-center items-center text-center px-8 text-white mt-20"
+        className="h-[60vh] bg-cover bg-center flex flex-col justify-center items-center text-center px-8 text-white mt-0"
         style={{ backgroundImage: `url(${bgImg})` }}
       >
-        <h1 className="text-4xl text-black md:text-5xl font-bold mb-2">Meet Our Travel Hosts</h1>
-        <p className="text-lg text-black md:text-xl max-w-2xl">
+        <h1 className="text-4xl text-white md:text-5xl font-bold mb-2">Meet Our Travel Hosts</h1>
+        <p className="text-lg text-white md:text-xl max-w-2xl">
           Connect with trusted local hosts to make your travel experience unforgettable.
         </p>
       </section>
 
       {/* Hosts Section */}
-      <section className="bg-[#f38f8f] py-12 px-6 text-center mb-7 mt-[-4px]">
+      <section className="bg-gray-800 py-12 px-6 text-center mb-7 mt-[-4px]">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-10">Featured Hosts</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6">
           {hosts.map((host, index) => (
             <div
               key={index}

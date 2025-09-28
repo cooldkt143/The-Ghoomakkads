@@ -80,7 +80,7 @@ const AdventureHub = () => {
               rel="noopener noreferrer"
               className="block bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden text-center h-[400px] relative"
             >
-              <img src={item.image} alt={item.title} className="w-full h-52 object-cover" />
+              <img src={item.image} alt={item.title} className="w-full h-[55%] object-cover" />
               <h2 className="text-2xl lg:text-4xl mb-5 text-blue-600 font-semibold mt-4">{item.title}</h2>
               <p className="text-xl lg:text-2xl text-gray-600 px-4 pb-6">{item.description}</p>
             </a>
