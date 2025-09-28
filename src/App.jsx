@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import TravelHostCommunity from "./pages/TravelHostCommunity";
 import PiggyBank from "./pages/PiggyBank";
 import Homestay from "./pages/Homestay";
+import LiveTrips from "./pages/LiveTrips";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/travelhostcommunity" element={<TravelHostCommunity />} />
         <Route path="/piggybank" element={<PiggyBank />} />
         <Route path="/homestay" element={<Homestay />} />
+        <Route path="/livetrips" element={<LiveTrips />} />
 
         {/* Catch-all for invalid URLs (optional) */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />

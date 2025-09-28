@@ -93,7 +93,7 @@ const Register = () => {
           {/* Submit Button */}
           <button
             type="button"
-            onClick={() => navigate('/travelhostcommunity')}
+            onClick={() => navigate('/livetrips')}
             className="bg-[#6b4011] text-white px-6 py-3 rounded-full text-sm hover:tex-base lg:text-lg mt-5 
             transition-all duration-300 hover:bg-[#a2413e] hover:scale-105"
           >
