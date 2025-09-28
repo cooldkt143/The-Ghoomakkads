@@ -104,7 +104,7 @@ const TripDetails = () => {
 
                     {/* Book Now Button */}
                     <button className="mt-6 px-8 py-3 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition duration-300">
-                        Book Now
+                        Claim Spot
                     </button>
                 </div>
 
