@@ -1,16 +1,25 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Explore from '../components/Explore';
 import Popular from '../components/Popular';
 import Piggy from '../components/Piggy';
+import Footer from '../components/Footer';
+
+// Import category images
+import communitiesImg from '../assets/images/communities.jpg';
+import handsImg from '../assets/images/Hands.gif';
+import moneyGif from '../assets/images/moneygif.gif';
+import religiousImg from '../assets/images/religious attraction.jpg';
+import chatImg from '../assets/images/Charm of a Chat.gif';
 
 const categories = [
-  { img: 'src/images/assets/frndsindex.jpg', alt: 'Malé, Maldives', subtitle: 'Travel With', title: 'Communities' },
-  { img: 'src/images/assets/Hands.gif', alt: 'Bangkok, Thailand', subtitle: 'Pin Your', title: 'Travel' },
-  { img: 'src/images/assets/moneygif.gif', alt: 'Kuala Lumpur, Malaysia', subtitle: 'Save For Your', title: 'Upcoming Trips' },
-  { img: 'src/images/assets/religious attraction.jpg', alt: 'Kathmandu, Nepal', subtitle: 'Explore', title: 'Undiscovered Places' },
-  { img: 'src/images/assets/Charm of a Chat.gif', alt: 'Jakarta, Indonesia', subtitle: 'Gossip with your', title: 'Travel Buddies' },
+  { img: communitiesImg, alt: 'Malé, Maldives', subtitle: 'Travel With', title: 'Communities' },
+  { img: handsImg, alt: 'Bangkok, Thailand', subtitle: 'Pin Your', title: 'Travel' },
+  { img: moneyGif, alt: 'Kuala Lumpur, Malaysia', subtitle: 'Save For Your', title: 'Upcoming Trips' },
+  { img: religiousImg, alt: 'Kathmandu, Nepal', subtitle: 'Explore', title: 'Undiscovered Places' },
+  { img: chatImg, alt: 'Jakarta, Indonesia', subtitle: 'Gossip with your', title: 'Travel Buddies' },
 ];
 
 const popularTours = [
@@ -20,17 +29,17 @@ const popularTours = [
 ];
 
 const Home = () => {
-  const openRegister = () => {
-    window.location.href = 'register.html';
-  };
+  const location = useLocation();
 
   return (
     <div className="top-0 left-0 w-full min-h-screen">
-      <Header />
+      {/* Pass the current location to Header for blur logic */}
+      <Header currentPath={location.pathname} />
       <Main />
       <Explore categories={categories} />
       <Popular popularTours={popularTours} />
       <Piggy />
+      <Footer />
     </div>
   );
 };

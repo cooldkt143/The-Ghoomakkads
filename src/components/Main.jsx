@@ -1,21 +1,32 @@
-import React from 'react';
-import heroImg from '../assets/images/edit1.jpg';
+import React, { useEffect, useState } from 'react';
+import bgImage from '../assets/Background/main_home_bg.jpg'; // import background image here
 
 const Main = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
   return (
-    <main className="pt-28">
+    <main
+      className="w-full min-h-screen bg-cover bg-center pt-0"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
       {/* Hero Section */}
-      <section className="pt-28 pb-20 bg-cover bg-no-repeat bg-center relative">
-        <div className="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between relative gap-10">
-          {/* Text Content */}
-          <div className="max-w-xl text-left lg:text-left z-2 lg:py-20 px-0">
-            <p className="text-yellow-600 font-['Brush_Script_MT',cursive] md:text-4xl text-xl mb-2">
+      <section className="pt-28 pb-28 relative transition-all duration-1000 ease-in-out">
+        <div className="container mx-auto px-6 flex flex-col items-center justify-center text-center">
+          <div
+            className={`max-w-2xl py-20 px-6 rounded-lg transition-all duration-1000 ease-out
+              ${animate ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}
+          >
+            <p className="text-yellow-600 font-['Brush_Script_MT',cursive] md:text-4xl text-xl mb-2 transition-all duration-1000 pt-20">
               Aao Ghoomne Chaleen
             </p>
-            <h2 className="text-4xl sm:text-7xl font-['Abril_Fatface'] font-bold text-gray-800 mb-4">
+            <h2 className="text-4xl sm:text-7xl font-['Abril_Fatface'] font-bold text-gray-800 mb-4 transition-all duration-1000 delay-200">
               The Ghoomakkads
             </h2>
-            <p className="text-base px-2 py-3 sm:text-2xl text-gray-500 lg:mb-6 font-medium">
+            <p className="text-base sm:text-2xl text-gray-800 mb-6 font-medium transition-all duration-1000 delay-400">
               <b>
                 You tired of dull trips?<br />
                 We have something exciting just for you!<br />
@@ -25,22 +36,10 @@ const Main = () => {
             </p>
             <button
               onClick={() => window.location.href = '/register'}
-              className="text-white md:w-60 md:text-2xl text-xl hover:text-xl md:hover:text-2xl md:h-15 px-6 py-2 bg-rose-400 hover:bg-rose-500 hover:text-white transition md:hover:w-60 hover:h-15 hover:px-6 hover:py-2"
+              className="text-white md:w-60 md:text-2xl text-xl px-6 py-3 bg-green-800 hover:bg-green-900 rounded-full transition-all duration-500 mt-4"
             >
               Register Now!
             </button>
-          </div>
-
-          {/* Hero Image */}
-          <div className="sm:block hidden max-w-md w-1/2 z-10">
-            <img
-              src={heroImg}
-              width="686"
-              height="812"
-              alt="hero banner"
-              loading="lazy"
-              className="w-full object-cover"
-            />
           </div>
         </div>
       </section>

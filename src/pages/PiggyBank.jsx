@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 // Import images from ../assets/images
 import logoImg from '../assets/images/logo-ghoomakkads.png';
 import heroBanner from '../assets/images/GhoomQr.png';
-import frndsIndex from '../assets/images/frndsindex.jpg';
+import frndsIndex from '../assets/images/communities.jpg';
 import handsGif from '../assets/images/Hands.gif';
 import moneyGif from '../assets/images/moneygif.gif';
 import religiousAttraction from '../assets/images/religious attraction.jpg';
