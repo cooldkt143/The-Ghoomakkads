@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import bgImage from '../assets/Background/main_home_bg.jpg'; // import background image here
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
+  const navigate = useNavigate();
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const Main = () => {
               </b>
             </p>
             <button
-              onClick={() => window.location.href = '/register'}
+              onClick={() => navigate('/register')}
               className="text-white md:w-60 md:text-2xl text-xl px-6 py-3 bg-green-800 hover:bg-green-900 rounded-full transition-all duration-500 mt-4"
             >
               Register Now!

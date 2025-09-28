@@ -1,0 +1,22 @@
+[
+  {
+    "img": "./src/assets/images/banner1.jpg",
+    "alt": "Mountains",
+    "title": "Explore the Mountains"
+  },
+  {
+    "img": "/assets/images/banner2.jpg",
+    "alt": "Beaches",
+    "title": "Relax at the Beaches"
+  },
+  {
+    "img": "/assets/images/banner3.jpg",
+    "alt": "Lakes",
+    "title": "Discover Beautiful Lakes"
+  },
+  {
+    "img": "/assets/images/banner4.jpg",
+    "alt": "Picnic Spots",
+    "title": "Enjoy Picnic Spots"
+  }
+]

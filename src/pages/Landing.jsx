@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import bgImg from "../assets/Background/landing_bg.jpg";
-import aroplaneImg from "../assets/images/Airplane.png";
 import logoImg from "../assets/images/logo-ghoomakkads.png";
 
 const Landing = () => {

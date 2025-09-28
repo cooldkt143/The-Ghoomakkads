@@ -12,11 +12,11 @@ const Explore = ({ categories }) => {
         </h2>
 
         {/* Grid container */}
-        <div className="bg-white rounded-xl p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="bg-white rounded-xl p-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-6">
           {categories.map((category, index) => (
             <div
               key={index}
-              className="relative h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+              className="relative h-40 lg:h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer group"
             >
               {/* Image */}
               <img
