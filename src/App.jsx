@@ -11,6 +11,7 @@ import TravelHostCommunity from "./pages/TravelHostCommunity";
 import PiggyBank from "./pages/PiggyBank";
 import Homestay from "./pages/Homestay";
 import LiveTrips from "./pages/LiveTrips";
+import TripDetails from "./pages/TripDetails";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/piggybank" element={<PiggyBank />} />
         <Route path="/homestay" element={<Homestay />} />
         <Route path="/livetrips" element={<LiveTrips />} />
+        <Route path="/tripdetails" element={<TripDetails />} />
 
         {/* Catch-all for invalid URLs (optional) */}
         <Route path="*" element={<h1>404 - Page Not Found</h1>} />

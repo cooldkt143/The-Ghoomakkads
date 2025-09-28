@@ -30,7 +30,7 @@ const Header = () => {
       : 'bg-transparent'
     : 'backdrop-blur-xl ';
 
-  const navItems = ['Home', 'About', 'HomeStay', 'Destination', 'TravelHostCommunity', 'AdventureHub','PiggyBank'];
+  const navItems = ['Home', 'HomeStay', 'Destination', 'LiveTrips', 'AdventureHub','PiggyBank'];
 
   return (
     <header
