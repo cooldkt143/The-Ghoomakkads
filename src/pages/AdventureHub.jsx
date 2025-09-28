@@ -4,55 +4,59 @@ import bikingImg from "../assets/images/biking.jpg";
 import trekkingImg from "../assets/images/trekking.jpg";
 import stargazingImg from "../assets/images/Star gazzing.jpg";
 import campingImg from "../assets/images/Camping.jpg";
+import photographyImg from "../assets/images/photography.jpg";
+import DigitalNomadsClubImg from "../assets/images/DigitalNomadsClub.jpg";
+import CulturalDiscoveryClubImg from "../assets/images/CulturalDiscoveryClub.jpg";
+import WaterSportsBeachClubImg from "../assets/images/WaterSports&BeachClub.jpg";
 
 const adventures = [
   {
-    title: "Biking",
+    title: "Biking Club",
     description: "Feel the adrenaline as you cycle through rugged terrains and serene trails.",
     image: bikingImg,
     link: "https://www.bikersclub.in/",
   },
   {
-    title: "Trekking",
+    title: "Trekking Club",
     description: "Explore majestic mountains and verdant valleys on your trekking adventures.",
     image: trekkingImg,
     link: "https://www.trekupindia.com/",
   },
   {
-    title: "Stargazing",
+    title: "Stargazing Club",
     description: "Defy gravity and test your limits as you scale rocky heights.",
     image: stargazingImg,
     link: "https://amateurastroclub.in/",
   },
   {
-    title: "Camping",
+    title: "Camping Club",
     description: "Reconnect with nature under the open sky at picturesque camping sites.",
     image: campingImg,
     link: "https://www.campsvilla.com/",
   },
   {
-    title: "Biking",
-    description: "Feel the adrenaline as you cycle through rugged terrains and serene trails.",
-    image: bikingImg,
-    link: "https://www.bikersclub.in/",
+    title: "Photography & Travel Vloggers Club",
+    description: "Capture the World, Frame by Frame.",
+    image: photographyImg,
+    link: "https://yourwebsite.com/photography-vloggers-club",
   },
   {
-    title: "Trekking",
-    description: "Explore majestic mountains and verdant valleys on your trekking adventures.",
-    image: trekkingImg,
-    link: "https://www.trekupindia.com/",
+    title: "Digital Nomads Club",
+    description: "Work Anywhere. Live Everywhere.",
+    image: DigitalNomadsClubImg,
+    link: "https://yourwebsite.com/digital-nomads-club",
   },
   {
-    title: "Stargazing",
-    description: "Defy gravity and test your limits as you scale rocky heights.",
-    image: stargazingImg,
-    link: "https://amateurastroclub.in/",
+    title: "Cultural Discovery Club",
+    description: "Travel Deeper. Discover Culture Beyond Borders.",
+    image: CulturalDiscoveryClubImg,
+    link: "https://yourwebsite.com/cultural-discovery-club",
   },
   {
-    title: "Camping",
-    description: "Reconnect with nature under the open sky at picturesque camping sites.",
-    image: campingImg,
-    link: "https://www.campsvilla.com/",
+    title: "Water Sports & Beach Club",
+    description: "Ride the Waves. Soak in the Vibes.",
+    image: WaterSportsBeachClubImg,
+    link: "https://yourwebsite.com/water-sports-beach-club",
   },
 ];
 
