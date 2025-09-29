@@ -95,7 +95,38 @@ const LiveTrips = () => {
 
         {/* Current Live Trips Grid */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Current Live Trips</h3>
+          <h3 className="text-xl text-white font-semibold mb-4 p-1">Current Live Trips</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {liveTripsData.map((trip, idx) => (
+              <motion.div
+                key={idx}
+                className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer"
+                whileHover={{ scale: 1.03 }}
+              >
+                <img
+                  src={trip.image}
+                  alt={trip.title}
+                  className="w-full h-80 object-cover"
+                />
+                {/* Info Overlay */}
+                <div className="absolute bottom-0 w-full bg-black/60 text-white p-4">
+                  <h4 className="text-lg font-bold">{trip.title}</h4>
+                  <p className="text-sm">Place: {trip.place}</p>
+                  <p className="text-sm">Travellers: {trip.travellers}</p>
+                  <p className="text-xs text-green-400">Booking Last Date: {trip.bookingLastDate}</p>
+                  <button
+                    className="mt-2 px-4 py-2 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition"
+                    onClick={() => handleViewDetails(trip)}
+                  >
+                    View Details
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="text-xl text-white font-semibold mb-4 p-1">Upcoming Trips</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {liveTripsData.map((trip, idx) => (
               <motion.div
@@ -126,11 +157,6 @@ const LiveTrips = () => {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 text-sm z-50">
-        <p>© The Ghoomakkads</p>
-      </footer>
     </div>
   );
 };

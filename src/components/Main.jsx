@@ -36,12 +36,20 @@ const Main = () => {
                 We'll put together a group of verified travelers who share similar travel styles to enhance your experience.
               </b>
             </p>
-            <button
-              onClick={() => navigate('/register')}
-              className="text-white md:w-60 md:text-2xl text-xl px-6 py-3 bg-green-800 hover:bg-green-900 rounded-full transition-all duration-500 mt-4"
-            >
-              Register Now!
-            </button>
+            <div className='flex flex-col md:flex-row gap-4 justify-center'>
+              <button
+                onClick={() => navigate('/register')}
+                className="text-white md:w-60 md:text-2xl text-xl px-6 py-3 bg-green-800 hover:bg-green-900 rounded-full transition-all duration-500 mt-4"
+              >
+                Register Now!
+              </button>
+              <button
+                onClick={() => navigate('/about')}
+                className="text-white md:w-60 md:text-2xl text-xl px-6 py-3 bg-green-800 hover:bg-green-900 rounded-full transition-all duration-500 mt-4"
+              >
+                About Us
+              </button>
+            </div>
           </div>
         </div>
       </section>

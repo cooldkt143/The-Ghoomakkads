@@ -4,17 +4,16 @@ import logoImg from '../assets/images/logo-ghoomakkads.png';
 import profileImg from '../assets/images/host1.jpg';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+// ✅ Load Google Material Icons in index.html
+// <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 const Header = () => {
-  const [navActive, setNavActive] = useState(false);
-  const [showProfile, setShowProfile] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [showProfile, setShowProfile] = useState(true);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const toggleNav = () => setNavActive(!navActive);
-
-  // Detect scroll for blur effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -30,87 +29,103 @@ const Header = () => {
       : 'bg-transparent'
     : 'backdrop-blur-xl ';
 
-  const navItems = ['Home', 'HomeStay', 'Destination', 'LiveTrips', 'AdventureHub','PiggyBank'];
+  const navItems = [
+    { name: 'Home', icon: 'home' },
+    { name: 'HomeStay', icon: 'hotel' },
+    { name: 'Destination', icon: 'explore' },
+    { name: 'LiveTrips', icon: 'travel_explore' },
+    { name: 'AdventureHub', icon: 'terrain' },
+    { name: 'PiggyBank', icon: 'savings' },
+    { name: 'TravelHostCommunity', icon: 'groups' },
+  ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full py-2 z-50 transition-all duration-500 ${bgClass}`}
-    >
-      {/* Full width flex container */}
-      <div className="flex items-center justify-between w-full px-4 pl-10">
-        {/* Left: Logo */}
-        <div className="flex items-center gap-2">
-          <div className="bg-white rounded-full p-2 flex items-center justify-center">
-            <img src={logoImg} width="40" height="40" alt="Ghoomakkads Logo" className="rounded-full" />
+    <>
+      {/* ✅ Fixed Top Header */}
+      <header
+        className={`fixed top-0 left-0 w-full py-2 z-50 transition-all duration-500 ${bgClass}`}
+      >
+        <div className="flex items-center justify-between w-full px-4 pl-4 md:pl-10">
+          {/* Logo + Name */}
+          <div className="flex items-center gap-2">
+            <div className="bg-white rounded-full p-2 flex items-center justify-center">
+              <img
+                src={logoImg}
+                width="40"
+                height="40"
+                alt="Ghoomakkads Logo"
+                className="rounded-full"
+              />
+            </div>
+            <h1 className="text-lg sm:text-2xl font-bold text-white">
+              Ghoomakkads
+            </h1>
           </div>
-          <h1 className="text-lg sm:text-2xl font-bold text-white">Ghoomakkads</h1>
+
+          {/* Center Nav (desktop only) */}
+          <nav className="hidden sm:flex gap-4">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() =>
+                  navigate(`/${item.name.toLowerCase().replace(/\s/g, '')}`)
+                }
+                className="text-white font-medium text-[18px] px-4 py-2 rounded-md bg-gray-600 backdrop-blur-xl bg-white/10 hover:bg-gray-800 transition"
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
+
+          {/* Profile (top right) */}
+          <div className="flex items-center gap-2 pr-0 md:pr-10">
+            {showProfile ? (
+              <button onClick={() => navigate('/profile')}>
+                <img
+                  src={profileImg}
+                  alt="Profile"
+                  className="w-[45px] h-[45px] rounded-full"
+                />
+              </button>
+            ) : (
+              <>
+                <button
+                  onClick={() => navigate('/')}
+                  className="px-4 py-2 rounded-md text-white backdrop-blur-xl bg-white/10 hover:bg-white/20 transition"
+                >
+                  Login
+                </button>
+                <button
+                  onClick={() => navigate('/')}
+                  className="px-4 py-2 rounded-md text-white backdrop-blur-xl bg-white/10 hover:bg-white/20 transition"
+                >
+                  Sign Up
+                </button>
+              </>
+            )}
+          </div>
         </div>
+      </header>
 
-        {/* Center: Navigation */}
-        <nav className="hidden sm:flex gap-4">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => navigate(`/${item.toLowerCase().replace(/\s/g, '')}`)}
-              className="text-white font-medium text-[18px] px-4 py-2 rounded-md bg-gray-600 backdrop-blur-xl bg-white/10 hover:bg-gray-800 transition"
-            >
-              {item}
-            </button>
-          ))}
-        </nav>
-
-        {/* Right: Profile / Login / Sign Up */}
-        <div className="flex items-center gap-2 pr-10">
-          {showProfile ? (
-            <button onClick={() => navigate('/profile')}>
-              <img src={profileImg} alt="Profile" className="w-[50px] h-[50px] rounded-full" />
-            </button>
-          ) : (
-            <>
-              <button
-                onClick={() => navigate('/')}
-                className="px-4 py-2 rounded-md text-white backdrop-blur-xl bg-white/10 hover:bg-white/20 transition"
-              >
-                Login
-              </button>
-              <button
-                onClick={() => navigate('/')}
-                className="px-4 py-2 rounded-md text-white backdrop-blur-xl bg-white/10 hover:bg-white/20 transition"
-              >
-                Sign Up
-              </button>
-            </>
-          )}
-
-          {/* Mobile menu toggle */}
+      {/* ✅ Fixed Bottom Nav (Mobile only) */}
+      <div className="sm:hidden fixed bottom-0 left-0 w-full bg-gray-900/90 backdrop-blur-lg z-50 flex justify-around py-2 border-t border-gray-700">
+        {navItems.map((item) => (
           <button
-            className="sm:hidden text-white text-2xl p-2"
-            aria-label="Toggle Menu"
-            onClick={toggleNav}
+            key={item.name}
+            onClick={() =>
+              navigate(`/${item.name.toLowerCase().replace(/\s/g, '')}`)
+            }
+            className={`flex flex-col items-center text-white px-0 py-1 ${
+              location.pathname.includes(item.name.toLowerCase())
+                ? 'text-blue-400'
+                : ''
+            }`}
           >
-            <IoMenuOutline size={30} />
+            <span className="material-icons text-2xl">{item.icon}</span>
           </button>
-        </div>
+        ))}
       </div>
-
-      {/* Mobile navigation */}
-      {navActive && (
-        <div className="sm:hidden flex flex-col gap-2 w-full bg-rose-400/30 backdrop-blur-xl p-4 absolute top-full left-0 z-40">
-          {navItems.map((item) => (
-            <button
-              key={item}
-              onClick={() => {
-                navigate(`/${item.toLowerCase().replace(/\s/g, '')}`);
-                setNavActive(false);
-              }}
-              className="text-white font-medium text-[18px] px-4 py-2 rounded-md backdrop-blur-xl bg-white/10 hover:bg-white/20 transition w-full text-center"
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-      )}
-    </header>
+    </>
   );
 };
 

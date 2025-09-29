@@ -6,73 +6,83 @@ const Homestay = () => {
   const [search, setSearch] = useState("");
   const [stateFilter, setStateFilter] = useState("");
   const [cityFilter, setCityFilter] = useState("");
-  const [priceRange, setPriceRange] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+  const [ratingFilter, setRatingFilter] = useState("");
+  const [customText, setCustomText] = useState("");
 
-  // Sample data for states, cities, price ranges
   const states = ["Maharashtra", "Goa", "Kerala", "Rajasthan"];
   const cities = ["Mumbai", "Pune", "Panaji", "Alleppey", "Jaipur", "Jaisalmer"];
-  const priceRanges = ["< $50", "$50 - $100", "$100 - $200", "$200+"];
 
-  // Sample home stay data
   const homestays = [
     {
       name: "Sea View Homestay",
       city: "Goa",
       state: "Goa",
       price: 120,
-      image: "https://images.unsplash.com/photo-1501117716987-c8d4f69e0f5a?auto=format&fit=crop&w=400&q=80",
+      review: 4.5,
+      image:
+        "https://images.unsplash.com/photo-1501117716987-c8d4f69e0f5a?auto=format&fit=crop&w=400&q=80",
     },
     {
       name: "Mountain Retreat",
       city: "Manali",
       state: "Himachal Pradesh",
       price: 90,
-      image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=400&q=80",
+      review: 4.2,
+      image:
+        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=400&q=80",
     },
     {
       name: "City Comfort Stay",
       city: "Mumbai",
       state: "Maharashtra",
       price: 150,
-      image: "https://images.unsplash.com/photo-1560184897-1fa70e4cd18f?auto=format&fit=crop&w=400&q=80",
+      review: 3.8,
+      image:
+        "https://images.unsplash.com/photo-1560184897-1fa70e4cd18f?auto=format&fit=crop&w=400&q=80",
     },
     {
       name: "Backwater Villa",
       city: "Alleppey",
       state: "Kerala",
       price: 180,
-      image: "https://images.unsplash.com/photo-1582719478171-82c0b9d5b4f3?auto=format&fit=crop&w=400&q=80",
+      review: 4.7,
+      image:
+        "https://images.unsplash.com/photo-1582719478171-82c0b9d5b4f3?auto=format&fit=crop&w=400&q=80",
     },
   ];
 
-  // Filtered home stays based on search & filters
   const filteredHomestays = homestays.filter((h) => {
     const matchesSearch = h.name.toLowerCase().includes(search.toLowerCase());
     const matchesState = stateFilter ? h.state === stateFilter : true;
     const matchesCity = cityFilter ? h.city === cityFilter : true;
     const matchesPrice =
-      priceRange === "< $50"
-        ? h.price < 50
-        : priceRange === "$50 - $100"
-        ? h.price >= 50 && h.price <= 100
-        : priceRange === "$100 - $200"
-        ? h.price > 100 && h.price <= 200
-        : priceRange === "$200+"
-        ? h.price > 200
-        : true;
+      (minPrice ? h.price >= parseInt(minPrice) : true) &&
+      (maxPrice ? h.price <= parseInt(maxPrice) : true);
+    const matchesRating = ratingFilter ? Math.floor(h.review) === parseInt(ratingFilter) : true;
 
-    return matchesSearch && matchesState && matchesCity && matchesPrice;
+    return matchesSearch && matchesState && matchesCity && matchesPrice && matchesRating;
   });
+
+  const handleSend = () => {
+    if (customText.trim()) {
+      alert(`You entered: ${customText}`);
+      setCustomText("");
+    }
+  };
 
   return (
     <div className="relative pt-20 bg-[#446a6c] min-h-screen">
       {/* Header */}
       <Header />
 
-      <div className="w-full p-4 space-y-12 pb-24 max-w-7xl mx-auto">
-        {/* Search & Filters */}
-        <div className="bg-white p-6 rounded-3xl shadow-lg mb-8 space-y-4">
-          <h1 className="text-3xl font-bold text-gray-800 mb-4">Find Your Perfect Homestay</h1>
+      <div className="w-full p-4 pb-24 max-w-7xl mx-auto h-[calc(100vh-80px)]">
+        {/* Search Bar */}
+        <div className="bg-white p-6 rounded-3xl shadow-lg mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+            Find Your Perfect Homestay
+          </h1>
           <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <input
               type="text"
@@ -88,7 +98,9 @@ const Homestay = () => {
             >
               <option value="">Select State</option>
               {states.map((state, idx) => (
-                <option key={idx} value={state}>{state}</option>
+                <option key={idx} value={state}>
+                  {state}
+                </option>
               ))}
             </select>
             <select
@@ -98,54 +110,120 @@ const Homestay = () => {
             >
               <option value="">Select City</option>
               {cities.map((city, idx) => (
-                <option key={idx} value={city}>{city}</option>
-              ))}
-            </select>
-            <select
-              value={priceRange}
-              onChange={(e) => setPriceRange(e.target.value)}
-              className="p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              <option value="">Select Price Range</option>
-              {priceRanges.map((range, idx) => (
-                <option key={idx} value={range}>{range}</option>
+                <option key={idx} value={city}>
+                  {city}
+                </option>
               ))}
             </select>
           </div>
         </div>
 
-        {/* Homestay Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredHomestays.map((h, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer"
-            >
-              <img
-                src={h.image}
-                alt={h.name}
-                className="w-full h-56 object-cover"
-              />
-              <div className="p-4">
-                <h2 className="text-xl font-bold text-gray-800">{h.name}</h2>
-                <p className="text-gray-600 mt-1">{h.city}, {h.state}</p>
-                <p className="text-green-600 font-semibold mt-2">${h.price} / night</p>
-                <button className="mt-3 w-full py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
-                  Book Now
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 h-[calc(100%-140px)]">
+          {/* Left Column (Filters, fixed height) */}
+          <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6 md:col-span-1 h-full overflow-y-auto">
+            <h2 className="text-xl font-semibold text-gray-700 mb-2">Filters</h2>
+
+            {/* Price Range */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">Price Range</h4>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="number"
+                  placeholder="Min"
+                  value={minPrice}
+                  onChange={(e) => setMinPrice(e.target.value)}
+                  className="w-1/2 p-2 border rounded-lg"
+                />
+                <span className="text-gray-600">-</span>
+                <input
+                  type="number"
+                  placeholder="Max"
+                  value={maxPrice}
+                  onChange={(e) => setMaxPrice(e.target.value)}
+                  className="w-1/2 p-2 border rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Rating */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">Rating</h4>
+              <div className="space-y-2">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <label
+                    key={star}
+                    className="flex items-center space-x-2 cursor-pointer"
+                  >
+                    <input
+                      type="radio"
+                      name="rating"
+                      value={star}
+                      checked={ratingFilter === String(star)}
+                      onChange={(e) => setRatingFilter(e.target.value)}
+                      className="form-radio text-yellow-500"
+                    />
+                    <span>{star} Star</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            {/* Custom Input */}
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">Custom Filter</h4>
+              <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
+                <input
+                  type="text"
+                  placeholder="Enter text..."
+                  value={customText}
+                  onChange={(e) => setCustomText(e.target.value)}
+                  className="flex-1 p-0 border rounded-lg"
+                />
+                <button
+                  onClick={handleSend}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                  style={{ fontFamily: "'Roboto', sans-serif" }}
+                >
+                  Send
                 </button>
               </div>
             </div>
-          ))}
-          {filteredHomestays.length === 0 && (
-            <p className="col-span-full text-center text-gray-500">No homestays found matching your filters.</p>
-          )}
+          </div>
+
+          {/* Right Column (Scrollable Homestay Cards) */}
+          <div className="md:col-span-3 h-100 overflow-y-auto scrollbar-hide pr-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredHomestays.map((h, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300 cursor-pointer"
+                >
+                  <img
+                    src={h.image}
+                    alt={h.name}
+                    className="w-full h-48 sm:h-56 object-cover"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-lg sm:text-xl font-bold text-gray-800">{h.name}</h2>
+                    <p className="text-gray-600 mt-1">{h.city}, {h.state}</p>
+                    <p className="text-green-600 font-semibold mt-2">${h.price} / night</p>
+                    <p className="text-yellow-500 mt-1">⭐ {h.review} / 5</p>
+                    <button className="mt-3 w-full py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+                      Book Now
+                    </button>
+                  </div>
+                </div>
+              ))}
+              {filteredHomestays.length === 0 && (
+                <p className="col-span-full text-center text-gray-500">
+                  No homestays found matching your filters.
+                </p>
+              )}
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 text-sm z-50">
-        <p>© The Ghoomakkads</p>
-      </footer>
     </div>
   );
 };

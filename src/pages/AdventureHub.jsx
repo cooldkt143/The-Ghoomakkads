@@ -94,7 +94,7 @@ const AdventureHub = () => {
         </section>
       </main>
 
-      <footer className="fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 text-sm z-50">
+      <footer className="hidden md:block fixed bottom-0 left-0 w-full bg-gray-800 text-white text-center py-4 text-sm z-50">
         <p>© The Ghoomakkads</p>
       </footer>
     </div>
