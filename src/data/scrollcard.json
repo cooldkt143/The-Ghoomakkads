@@ -1,22 +1,17 @@
 [
   {
-    "img": "./src/assets/images/banner1.jpg",
+    "img": "./src/assets/images/scrollcard/sc1.jpg",
     "alt": "Mountains",
     "title": "Explore the Mountains"
   },
   {
-    "img": "/assets/images/banner2.jpg",
+    "img": "./src/assets/images/scrollcard/sg2.jpg",
     "alt": "Beaches",
     "title": "Relax at the Beaches"
   },
   {
-    "img": "/assets/images/banner3.jpg",
+    "img": "./src/assets/images/scrollcard/sc3.jpg",
     "alt": "Lakes",
     "title": "Discover Beautiful Lakes"
-  },
-  {
-    "img": "/assets/images/banner4.jpg",
-    "alt": "Picnic Spots",
-    "title": "Enjoy Picnic Spots"
   }
 ]
