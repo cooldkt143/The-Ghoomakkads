@@ -16,140 +16,77 @@ const Homestay = () => {
 
   const homestays = [
     {
-      name: "Sea View Homestay",
-      city: "Goa",
-      state: "Goa",
-      price: 120,
-      review: 4.5,
-      image:
-        "https://images.unsplash.com/photo-1501117716987-c8d4f69e0f5a?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Mountain Retreat",
-      city: "Manali",
+      name: "Mountain & Peace Homestay",
+      city: "Shimla",
       state: "Himachal Pradesh",
-      price: 90,
-      review: 4.2,
-      image:
-        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=400&q=80",
+      price: 1200,     // ~ ₹1,200/night for 2 people :contentReference[oaicite:0]{index=0}
+      review: 4.2,     // approximate
+      image: "./src/assets/images/homestay/h1.jpg"
     },
     {
-      name: "City Comfort Stay",
-      city: "Mumbai",
-      state: "Maharashtra",
-      price: 150,
-      review: 3.8,
-      image:
-        "https://images.unsplash.com/photo-1560184897-1fa70e4cd18f?auto=format&fit=crop&w=400&q=80",
+      name: "The Pine Residency",
+      city: "Shimla",
+      state: "Himachal Pradesh",
+      price: 1440,
+      review: 4.0,
+      image: "./src/assets/images/homestay/h2.jpg"
     },
     {
-      name: "Backwater Villa",
-      city: "Alleppey",
-      state: "Kerala",
-      price: 180,
-      review: 4.7,
-      image:
-        "https://images.unsplash.com/photo-1582719478171-82c0b9d5b4f3?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Desert Oasis Camp",
-      city: "Jaisalmer",
-      state: "Rajasthan",
-      price: 110,
-      review: 4.3,
-      image:
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Tea Garden Cottage",
-      city: "Darjeeling",
-      state: "West Bengal",
-      price: 95,
-      review: 4.6,
-      image:
-        "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Lakeside Haven",
-      city: "Udaipur",
-      state: "Rajasthan",
-      price: 160,
-      review: 4.4,
-      image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Forest Edge Stay",
-      city: "Coorg",
-      state: "Karnataka",
-      price: 100,
+      name: "Silverpine Homestay",
+      city: "Shimla",
+      state: "Himachal Pradesh",
+      price: 1100,
       review: 4.1,
-      image:
-        "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80",
+      image: "./src/assets/images/homestay/h3.jpg"
     },
     {
-      name: "Royal Heritage Haveli",
-      city: "Jaipur",
-      state: "Rajasthan",
-      price: 200,
-      review: 4.8,
-      image:
-        "https://images.unsplash.com/photo-1535556116002-6281ff3e9f13?auto=format&fit=crop&w=400&q=80",
+      name: "Summer Rain BnB",
+      city: "Shimla",
+      state: "Himachal Pradesh",
+      price: 1400,
+      review: 4.0,
+      image: "./src/assets/images/homestay/h4.jpg"
     },
     {
-      name: "Riverside Bliss",
+      name: "Budget Homestay, Ayodhya",
+      city: "Ayodhya",
+      state: "Uttar Pradesh",
+      price: 1500,
+      review: 4.3,
+      image: "./src/assets/images/homestay/h5.jpg"
+    },
+    {
+      name: "Guest House Kanyakumari",
+      city: "Kanyakumari",
+      state: "Tamil Nadu",
+      price: 1300,
+      review: 3.9,
+      image: "./src/assets/images/homestay/h6.jpg"
+    },
+    {
+      name: "Hotel Aljemin",
+      city: "Kanyakumari",
+      state: "Tamil Nadu",
+      price: 1400,
+      review: 4.2,
+      image: "./src/assets/images/homestay/h7.jpg"
+    },
+    {
+      name: "Hostel / Dorm Room, Bir (Mahinder’s Homestay)",
+      city: "Bir",
+      state: "Himachal Pradesh",
+      price: 500,          // ~ ₹500/night for a dorm-style or simple room :contentReference[oaicite:1]{index=1}
+      review: 4.0,
+      image: "./src/assets/images/homestay/h8.jpg"
+    },
+    {
+      name: "Youth Hostel, Rishikesh",
       city: "Rishikesh",
       state: "Uttarakhand",
-      price: 130,
-      review: 4.5,
-      image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Hilltop Escape",
-      city: "Shillong",
-      state: "Meghalaya",
-      price: 140,
-      review: 4.2,
-      image:
-        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Houseboat Serenity",
-      city: "Srinagar",
-      state: "Jammu & Kashmir",
-      price: 170,
-      review: 4.6,
-      image:
-        "https://images.unsplash.com/photo-1606741965912-9b66f9c73f1a?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Eco Jungle Stay",
-      city: "Kaziranga",
-      state: "Assam",
-      price: 85,
-      review: 4.0,
-      image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Beachside Paradise",
-      city: "Pondicherry",
-      state: "Puducherry",
-      price: 155,
-      review: 4.7,
-      image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      name: "Valley View Lodge",
-      city: "Leh",
-      state: "Ladakh",
-      price: 175,
-      review: 4.6,
-      image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80",
-    },
+      price: 600,          // ~ ₹600/night for dorm-style stay
+      review: 4.1,
+      image: "./src/assets/images/homestay/h9.jpg"
+    }
   ];
 
   const filteredHomestays = homestays.filter((h) => {
