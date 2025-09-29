@@ -19,8 +19,8 @@ const Homestay = () => {
       name: "Mountain & Peace Homestay",
       city: "Shimla",
       state: "Himachal Pradesh",
-      price: 1200,     // ~ ₹1,200/night for 2 people :contentReference[oaicite:0]{index=0}
-      review: 4.2,     // approximate
+      price: 1200,     
+      review: 4.2,     
       image: "./src/assets/images/homestay/h1.jpg"
     },
     {
@@ -75,7 +75,7 @@ const Homestay = () => {
       name: "Hostel / Dorm Room, Bir (Mahinder’s Homestay)",
       city: "Bir",
       state: "Himachal Pradesh",
-      price: 500,          // ~ ₹500/night for a dorm-style or simple room :contentReference[oaicite:1]{index=1}
+      price: 500,         
       review: 4.0,
       image: "./src/assets/images/homestay/h8.jpg"
     },
@@ -83,7 +83,7 @@ const Homestay = () => {
       name: "Youth Hostel, Rishikesh",
       city: "Rishikesh",
       state: "Uttarakhand",
-      price: 600,          // ~ ₹600/night for dorm-style stay
+      price: 600,        
       review: 4.1,
       image: "./src/assets/images/homestay/h9.jpg"
     }
@@ -156,13 +156,13 @@ const Homestay = () => {
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 h-[calc(100%-140px)]">
-          {/* Left Column (Filters, fixed height) */}
+          {/* Left Column (Filters) */}
           <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6 md:col-span-1 h-full overflow-y-auto">
             <h2 className="text-xl font-semibold text-gray-700 mb-2">Filters</h2>
 
             {/* Price Range */}
             <div>
-              <h4 className="text-lg font-semibold text-gray-800 mb-2">Price Range</h4>
+              <h4 className="text-lg font-semibold text-gray-800 mb-2">Price Range (₹)</h4>
               <div className="flex items-center space-x-2">
                 <input
                   type="number"
@@ -227,7 +227,7 @@ const Homestay = () => {
             </div>
           </div>
 
-          {/* Right Column (Scrollable Homestay Cards) */}
+          {/* Right Column (Homestay Cards) */}
           <div className="md:col-span-3 h-100 overflow-y-auto scrollbar-hide pr-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredHomestays.map((h, idx) => (
@@ -243,7 +243,7 @@ const Homestay = () => {
                   <div className="p-4">
                     <h2 className="text-lg sm:text-xl font-bold text-gray-800">{h.name}</h2>
                     <p className="text-gray-600 mt-1">{h.city}, {h.state}</p>
-                    <p className="text-green-600 font-semibold mt-2">${h.price} / night</p>
+                    <p className="text-green-600 font-semibold mt-2">₹{h.price.toLocaleString()} / night</p>
                     <p className="text-yellow-500 mt-1">⭐ {h.review} / 5</p>
                     <button className="mt-3 w-full py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
                       Book Now
