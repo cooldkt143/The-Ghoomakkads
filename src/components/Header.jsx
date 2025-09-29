@@ -27,8 +27,9 @@ const Header = () => {
     ? scrolled
       ? 'backdrop-blur-xl'
       : 'bg-transparent'
-    : 'backdrop-blur-xl ';
+    : 'backdrop-blur-xl';
 
+  // ✅ Removed TravelHostCommunity
   const navItems = [
     { name: 'Home', icon: 'home' },
     { name: 'HomeStay', icon: 'hotel' },
@@ -36,7 +37,6 @@ const Header = () => {
     { name: 'LiveTrips', icon: 'travel_explore' },
     { name: 'AdventureHub', icon: 'terrain' },
     { name: 'PiggyBank', icon: 'savings' },
-    { name: 'TravelHostCommunity', icon: 'groups' },
   ];
 
   return (
