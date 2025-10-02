@@ -23,9 +23,9 @@ const categories = [
 ];
 
 const popularTours = [
-  { image: 'src/assets/images/sunset in mountains.jpg', title: 'Solo? they say "manzilon ki kya khabar, jab raahon se ishq ho"', duration: '12 Days', rating: 4 },
-  { image: 'src/assets/images/sunset.jpg', title: 'Outing With Friends/ Family? they say "Hum saath saath hain"', duration: '12 Days', rating: 4 },
-  { image: 'src/assets/images/rajasthan India.jpg', title: 'Need a Suspense Trip? they say "yeh sham, tum aur ankahi dastan"', duration: '12 Days', rating: 4 },
+  { image: '/homePopular/sunset in mountains.jpg', title: 'Solo? they say "manzilon ki kya khabar, jab raahon se ishq ho"', duration: '12 Days', rating: 4 },
+  { image: '/homePopular/sunset.jpg', title: 'Outing With Friends/ Family? they say "Hum saath saath hain"', duration: '12 Days', rating: 4 },
+  { image: '/homePopular/rajasthan India.jpg', title: 'Need a Suspense Trip? they say "yeh sham, tum aur ankahi dastan"', duration: '12 Days', rating: 4 },
 ];
 
 const Home = () => {
