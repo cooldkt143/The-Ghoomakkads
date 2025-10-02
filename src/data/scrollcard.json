@@ -1,16 +1,16 @@
 [
   {
-    "img": "./src/assets/images/scrollcard/sc1.jpg",
+    "img": "/scrollcard/sc1.jpg",
     "alt": "Mountains",
     "title": "Explore the Mountains"
   },
   {
-    "img": "./src/assets/images/scrollcard/sg2.jpg",
+    "img": "/scrollcard/sg2.jpg",
     "alt": "Beaches",
     "title": "Relax at the Beaches"
   },
   {
-    "img": "./src/assets/images/scrollcard/sc3.jpg",
+    "img": "/scrollcard/sc3.jpg",
     "alt": "Lakes",
     "title": "Discover Beautiful Lakes"
   }

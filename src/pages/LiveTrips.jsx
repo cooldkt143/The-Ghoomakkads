@@ -6,17 +6,17 @@ import Header from "../components/Header";
 
 const pastTripsData = [
   {
-    image: "./src/assets/images/livetrips/l1.jpg",
+    image: "/livetrips/l1.jpg",
     title: "Sunset at the Beach",
     location: "Goa",
   },
   {
-    image: "./src/assets/images/livetrips/l2.jpg",
+    image: "/livetrips/l2.jpg",
     title: "Snowy Mountain Peaks",
     location: "Manali",
   },
   {
-    image: "./src/assets/images/livetrips/l3.jpg",
+    image: "/livetrips/l3.jpg",
     title: "City Lights at Night",
     location: "Mumbai",
   },
@@ -24,21 +24,21 @@ const pastTripsData = [
 
 const liveTripsData = [
   {
-    image: "./src/assets/images/livetrips/lt1.jpg",
+    image: "/livetrips/lt1.jpg",
     title: "Meghalaya Living Roots Trek",
     place: "Shillong",
     travellers: 10,
     bookingLastDate: "2025-11-05",
   },
   {
-    image: "./src/assets/images/livetrips/lt2.jpg",
+    image: "/livetrips/lt2.jpg",
     title: "Ladakh Valley Expedition",
     place: "Leh",
     travellers: 15,
     bookingLastDate: "2025-11-12",
   },
   {
-    image: "./src/assets/images/livetrips/lt3.jpg",
+    image: "/livetrips/lt3.jpg",
     title: "Rishikesh Adventure Camp",
     place: "Rishikesh",
     travellers: 12,
@@ -49,21 +49,21 @@ const liveTripsData = [
 // 🆕 Upcoming Trips Data
 const upcomingTripsData = [
   {
-    image: "./src/assets/images/livetrips/up1.jpg",
+    image: "/livetrips/up1.jpg",
     title: "Darjeeling Tea Garden Hike",
     place: "Darjeeling",
     travellers: 9,
     bookingLastDate: "2025-12-05",
   },
   {
-    image: "./src/assets/images/livetrips/up2.jpg",
+    image: "/livetrips/up2.jpg",
     title: "Goa Beach Carnival",
     place: "Goa",
     travellers: 25,
     bookingLastDate: "2025-12-15",
   },
   {
-    image: "./src/assets/images/livetrips/up3.jpg",
+    image: "/livetrips/up3.jpg",
     title: "Pondicherry Coastal Getaway",
     place: "Pondicherry",
     travellers: 18,

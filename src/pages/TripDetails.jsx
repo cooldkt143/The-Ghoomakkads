@@ -17,14 +17,14 @@ const TripDetails = () => {
     name: "Rohan Sharma",
     instagram: "@rohan_travels",
     image:
-      "./src/assets/images/tripdetails/host.jpg",
+      "/tripdetails/host.jpg",
   };
 
   // ✅ Trip Images Gallery
   const tripImages = [
-    "./src/assets/images/tripdetails/td1.jpg", 
-    "./src/assets/images/tripdetails/td2.jpg", 
-    "./src/assets/images/tripdetails/td3.jpg",
+    "/tripdetails/td1.jpg", 
+    "/tripdetails/td2.jpg", 
+    "/tripdetails/td3.jpg",
   ];
 
   // ✅ Trip Itinerary with realistic costs (₹)

@@ -21,7 +21,7 @@ const Homestay = () => {
       state: "Himachal Pradesh",
       price: 1200,     
       review: 4.2,     
-      image: "./src/assets/images/homestay/h1.jpg"
+      image: "/homestay/h1.jpg"
     },
     {
       name: "The Pine Residency",
@@ -29,7 +29,7 @@ const Homestay = () => {
       state: "Himachal Pradesh",
       price: 1440,
       review: 4.0,
-      image: "./src/assets/images/homestay/h2.jpg"
+      image: "/homestay/h2.jpg"
     },
     {
       name: "Silverpine Homestay",
@@ -37,7 +37,7 @@ const Homestay = () => {
       state: "Himachal Pradesh",
       price: 1100,
       review: 4.1,
-      image: "./src/assets/images/homestay/h3.jpg"
+      image: "/homestay/h3.jpg"
     },
     {
       name: "Summer Rain BnB",
@@ -45,7 +45,7 @@ const Homestay = () => {
       state: "Himachal Pradesh",
       price: 1400,
       review: 4.0,
-      image: "./src/assets/images/homestay/h4.jpg"
+      image: "/homestay/h4.jpg"
     },
     {
       name: "Budget Homestay, Ayodhya",
@@ -53,7 +53,7 @@ const Homestay = () => {
       state: "Uttar Pradesh",
       price: 1500,
       review: 4.3,
-      image: "./src/assets/images/homestay/h5.jpg"
+      image: "/homestay/h5.jpg"
     },
     {
       name: "Guest House Kanyakumari",
@@ -61,7 +61,7 @@ const Homestay = () => {
       state: "Tamil Nadu",
       price: 1300,
       review: 3.9,
-      image: "./src/assets/images/homestay/h6.jpg"
+      image: "/homestay/h6.jpg"
     },
     {
       name: "Hotel Aljemin",
@@ -69,7 +69,7 @@ const Homestay = () => {
       state: "Tamil Nadu",
       price: 1400,
       review: 4.2,
-      image: "./src/assets/images/homestay/h7.jpg"
+      image: "/homestay/h7.jpg"
     },
     {
       name: "Hostel / Dorm Room, Bir (Mahinder’s Homestay)",
@@ -77,7 +77,7 @@ const Homestay = () => {
       state: "Himachal Pradesh",
       price: 500,         
       review: 4.0,
-      image: "./src/assets/images/homestay/h8.jpg"
+      image: "/homestay/h8.jpg"
     },
     {
       name: "Youth Hostel, Rishikesh",
@@ -85,7 +85,7 @@ const Homestay = () => {
       state: "Uttarakhand",
       price: 600,        
       review: 4.1,
-      image: "./src/assets/images/homestay/h9.jpg"
+      image: "/homestay/h9.jpg"
     }
   ];
 
