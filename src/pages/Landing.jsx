@@ -6,7 +6,7 @@ const Landing = () => {
   const navigate = useNavigate();
 
   const openHome = () => {
-    navigate("/home");
+    navigate("/login");
   };
 
   return (

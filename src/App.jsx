@@ -12,6 +12,8 @@ import PiggyBank from "./pages/PiggyBank";
 import Homestay from "./pages/Homestay";
 import LiveTrips from "./pages/LiveTrips";
 import TripDetails from "./pages/TripDetails";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/login";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/" element={<Landing />} />
 
         {/* Other Pages */}
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/destination" element={<Destination />} />
