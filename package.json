@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@botpress/webchat": "^3.2.9",
+    "@dataconnect/generated": "file:src/dataconnect-generated",
     "@ionic/react": "^8.7.5",
     "firebase": "^12.3.0",
     "framer-motion": "^12.23.22",

@@ -63,7 +63,7 @@ const adventures = [
 
 const AdventureHub = () => {
   return (
-    <div className="bg-green-900 text-gray-800">
+    <div id="adventurehub" className="bg-green-900 text-gray-800">
       <header
         className="fixed top-0 left-0 w-full text-center text-white py-20 px-4 bg-center bg-blend-overlay bg-black/50 z-50"
         style={{ backgroundImage: `url(${bgImg})`, height: "290px" }}

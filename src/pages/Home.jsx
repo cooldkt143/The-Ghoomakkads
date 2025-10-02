@@ -32,7 +32,7 @@ const Home = () => {
   const location = useLocation();
 
   return (
-    <div className="top-0 left-0 w-full min-h-screen">
+    <div id='home' className="top-0 left-0 w-full min-h-screen">
       {/* Pass the current location to Header for blur logic */}
       <Header currentPath={location.pathname} />
       <Main />

@@ -89,7 +89,7 @@ const LiveTrips = () => {
   };
 
   return (
-    <div className="relative pt-20 bg-[#446a6c]">
+    <div id="livetrips" className="relative pt-20 bg-[#446a6c]">
       <Header />
 
       <div className="w-full p-4 space-y-12 pb-24">

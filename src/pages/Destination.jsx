@@ -4,7 +4,7 @@ import Header from "../components/Header"; // import your header/topbar componen
 
 const Destination = () => {
   return (
-    <div>
+    <div id="destination">
       {/* Header Component */}
       <Header />
 

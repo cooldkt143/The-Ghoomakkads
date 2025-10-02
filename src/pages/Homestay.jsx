@@ -109,7 +109,7 @@ const Homestay = () => {
   };
 
   return (
-    <div className="relative pt-20 bg-[#446a6c] min-h-screen">
+    <div id="homestay" className="relative pt-20 bg-[#446a6c] min-h-screen">
       {/* Header */}
       <Header />
 

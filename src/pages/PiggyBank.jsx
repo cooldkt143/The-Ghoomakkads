@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 const Piggy = () => {
   return (
-    <div>
+    <div id="piggybank">
       <Header />
       <Hero />
       <PiggyBank />

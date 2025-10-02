@@ -1,5 +1,9 @@
-import { useState } from "react";
-import prof2 from "../assets/images/prof2.jpg";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
+
+// Sample images for posts, reels, saved content
 import post2 from "../assets/images/post2.jpg";
 import post3 from "../assets/images/post3.jpg";
 import post4 from "../assets/images/post4.jpg";
@@ -13,40 +17,52 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState("posts");
   const [isDarkMode, setDarkMode] = useState(false);
   const [modalImage, setModalImage] = useState(null);
+  const [user, setUser] = useState(null);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Listen for auth state changes
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser); // store user info
+      } else {
+        navigate("/login"); // redirect if not logged in
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
+
+  const toggleTheme = () => setDarkMode(!isDarkMode);
+  const openModal = (src) => setModalImage(src);
+  const closeModal = () => setModalImage(null);
 
   const tabs = ["posts", "reels", "saved"];
-
-  const toggleTheme = () => {
-    setDarkMode(!isDarkMode);
-  };
-
-  const openModal = (src) => {
-    setModalImage(src);
-  };
-
-  const closeModal = () => {
-    setModalImage(null);
-  };
-
   const tabImages = {
     posts: [post2, post3, post4],
     reels: [reels1, reels2, reels3],
     saved: [tagged1, tagged2],
   };
 
+  if (!user) return null; // wait for auth
+
+  // Use Firebase photoURL if available, else fallback to a default image
+  const profilePhoto = user.photoURL || "https://via.placeholder.com/150";
+
   return (
     <div className={`${isDarkMode ? "dark" : ""} min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white`}>
       <div className="max-w-5xl mx-auto p-5">
         <header className="flex flex-col md:flex-row items-center mb-6">
           <div className="w-[150px] h-[150px] rounded-full overflow-hidden border-2 border-gray-300">
-            <img src={prof2} alt="Profile" className="w-full h-full object-cover" />
+            <img src={profilePhoto} alt="Profile" className="w-full h-full object-cover" />
           </div>
 
           <div className="flex-1 text-center md:text-left mt-4 md:mt-0 md:ml-6">
             <div className="flex justify-between items-center">
-              <h1 className="text-2xl font-bold">Vanella Markus</h1>
+              <h1 className="text-2xl font-bold">{user.displayName || "User"}</h1>
             </div>
-            <p className="text-xl text-gray-500 dark:text-gray-300">@vanel</p>
+            <p className="text-xl text-gray-500 dark:text-gray-300">@{user.email.split("@")[0]}</p>
             <div className="text-xl flex gap-6 justify-center md:justify-start mt-2">
               <span><strong>200</strong> posts</span>
               <span><strong>1.5M</strong> followers</span>
